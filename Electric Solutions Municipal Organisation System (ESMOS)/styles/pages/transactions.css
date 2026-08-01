@@ -1,0 +1,282 @@
+/* === TRANSACTIONS === */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-all {
+  background: #333a5e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.transactions-wrapper {
+  position: relative;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.txn-title {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.txn-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.txn-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00FF99;
+  margin-bottom: 12px;
+}
+
+.txn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+.transaction-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: black;
+  gap: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.transaction-card:hover {
+  background: #f5f5f5;
+}
+
+.txn-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.txn-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.txn-price {
+  font-weight: 600;
+  color: black;
+}
+
+.show-more-btn {
+  background: #2a2e48;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.extra-transactions.hidden {
+  display: none;
+}
+
+/* === TRANSACTION DETAILS PAGE === */
+.transaction-details {
+  padding: 24px 20px 40px;
+}
+
+.transaction-summary .usage-summary {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: space-between;
+}
+
+.usage-box {
+  flex: 1;
+  border-radius: 16px;
+  padding: 16px 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.usage-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.usage-value {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.usage-value span {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.usage-trend {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.usage-trend.red {
+  color: #ff4b4b;
+}
+
+.usage-trend.green {
+  color: #00ff99;
+}
+
+.view-link {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 14px;
+  text-decoration: underline;
+  color: white;
+  opacity: 0.9;
+}
+
+.current-bill h2 {
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.status-tag {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 100px;
+  font-weight: 600;
+  color: black;
+  white-space: nowrap;
+}
+
+.status-tag.paid {
+  background: #2be29d;
+}
+
+.status-tag.pending {
+  background: #ffd966;
+}
+
+.status-tag.overdue {
+  background: #ff4b4b;
+  color: white;
+}
+
+.breakdown-button {
+  font-size: 12px;
+  background: none;
+  border: 2px solid #ccc;
+  border-radius: 14px;
+  padding: 12px 14px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 130px;
+}
+
+.transaction-summary-card {
+  background: #1f1f1f;
+  margin: 24px 20px;
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  font-size: 14px;
+}
+
+.transaction-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.summary-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.back-button {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.back-button:active {
+  color: #999;
+}
+
+.center-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.center-header .back-button {
+  position: absolute;
+  left: 0;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.delta {
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.delta.red {
+  color: #FF4B4B;
+}
+
+.delta.green {
+  color: #00FF99;
+}
+
+.subtext {
+  font-size: 12px;
+  color: #aaa;
+}

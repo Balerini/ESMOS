@@ -1,0 +1,70 @@
+<main class="usage-page">
+
+    <!-- Page Title -->
+    <h2 style="color: white; padding: 24px 24px 0;">Electricity Usage</h2>
+  
+    <!-- Daily Usage Chart -->
+    <div class="billing-card" style="margin: 20px;">
+      <h3 class="section-title">Daily Breakdown</h3>
+      <canvas id="dailyUsageChart" height="180"></canvas>
+    </div>
+  
+    <!-- Power Savings Chart -->
+    <div class="billing-card" style="margin: 0 20px 40px;">
+      <h3 class="section-title">Power Savings (kWh)</h3>
+      <canvas id="savingsChart" height="180"></canvas>
+    </div>
+    
+    <!-- Monthly Charges -->
+  <div class="billing-card" style="margin: 24px 20px;">
+    <h3 class="section-title">Monthly Charges</h3>
+
+    <div class="service-row">
+      <div class="service-info">
+        <strong>Electricity Services</strong>
+        <span>Usage: 312.5 kWh</span>
+      </div>
+      <div class="usage-bars">
+        <div class="bar gray"></div><div class="bar gray"></div>
+        <div class="bar gray"></div><div class="bar gray"></div>
+        <div class="bar gray"></div><div class="bar red"></div>
+      </div>
+      <div class="price">$73.06</div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-info">
+        <strong>Water Services</strong>
+        <span>Usage: 15 Cu M</span>
+      </div>
+      <div class="usage-bars">
+        <div class="bar gray"></div><div class="bar gray"></div>
+        <div class="bar gray"></div><div class="bar gray"></div>
+        <div class="bar gray"></div><div class="bar red"></div>
+      </div>
+      <div class="price">$54.34</div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-info">
+        <strong>Gas Services</strong>
+        <span>Usage: 150 kWh</span>
+      </div>
+      <div class="usage-bars">
+        <div class="bar gray"></div><div class="bar gray"></div>
+        <div class="bar gray"></div><div class="bar gray"></div>
+        <div class="bar gray"></div><div class="bar green"></div>
+      </div>
+      <div class="price">$21.70</div>
+    </div>
+  </div>
+
+  </main>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/core/loader.js"></script>
+<script src="js/core/charts.js"></script>
+<script src="js/core/status.js"></script>
+<script src="js/core/transaction.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/main.js"></script>

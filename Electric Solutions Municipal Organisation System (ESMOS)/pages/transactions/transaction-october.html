@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>October 2025 Usage Summary</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="overflow: hidden;">
+  <main class="transaction-detail">
+    <!-- Header -->
+    <div class="transaction-header center-header">
+      <button class="back-button" onclick="loadPage('billing')">←</button>
+      <h2 class="summary-title">October 2025 Usage Summary</h2>
+    </div>
+
+    <!-- Summary Bar Chart -->
+    <div class="summary-chart">
+      <canvas id="summaryChart" height="160"></canvas>
+    </div>
+
+    <!-- Usage Gauges -->
+    <div class="gauge-row">
+      <div class="gauge-card">
+        <canvas id="gaugeElectricity" class="gauge-canvas" width="100" height="100"></canvas>
+        <div class="gauge-usage">
+          <strong>450.2 kWh</strong>
+          <div class="gauge-ref">of 600 kWh used</div>
+          <div class="gauge-delta green">▲ 3%</div>
+          <div class="gauge-title">Electricity</div>
+        </div>
+      </div>
+      <div class="gauge-card">
+        <canvas id="gaugeWater" class="gauge-canvas" width="100" height="100"></canvas>
+        <div class="gauge-usage">
+          <strong>33 Cu M</strong>
+          <div class="gauge-ref">of 40 Cu M</div>
+          <div class="gauge-delta red">▼ 4%</div>
+          <div class="gauge-title">Water</div>
+        </div>
+      </div>
+      <div class="gauge-card">
+        <canvas id="gaugeGas" class="gauge-canvas" width="100" height="100"></canvas>
+        <div class="gauge-usage">
+          <strong>412 kWh</strong>
+          <div class="gauge-ref">of 500 kWh used</div>
+          <div class="gauge-delta red">▼ 2%</div>
+          <div class="gauge-title">Gas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bill Summary -->
+    <div class="bill-summary" id="billSummary">
+      <div class="bill-summary-header">
+        <div id="billStatus" class="bill-status pending" data-status="pending">Status: PENDING</div>
+      </div>
+
+      <h3>Current Bill</h3>
+      <p>Your total bill is:</p>
+
+      <div class="bill-amount-row">
+        <h1 id="billAmount" class="bill-amount text-orange">$147.40</h1>
+        <button id="payButton" class="pay-button">Pay Now</button>
+      </div>
+
+      <p class="bill-description">
+        This bill is due by the end of October. Consider paying early to enjoy rebates.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const summaryCtx = document.getElementById("summaryChart");
+    if (summaryCtx) {
+      new Chart(summaryCtx, {
+        type: "bar",
+        data: {
+          labels: ["Electricity", "Water", "Gas"],
+          datasets: [{
+            label: "Usage",
+            data: [450.2, 33, 412],
+            backgroundColor: ["#FF4B4B", "#57A5F6", "#00FF99"],
+            borderRadius: 8,
+            barThickness: 40
+          }]
+        },
+        options: {
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+          },
+          scales: {
+            y: { ticks: { color: "#fff" }, grid: { color: "#444" } },
+            x: { ticks: { color: "#fff" }, grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    function renderGaugeChart(id, used, total, color) {
+      const canvas = document.getElementById(id);
+      if (!canvas) return;
+      new Chart(canvas, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [used, total - used],
+            backgroundColor: [color, '#2b2b2b'],
+            borderWidth: 0,
+            cutout: '70%',
+            circumference: 180,
+            rotation: 270
+          }]
+        },
+        options: {
+          responsive: false,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false }
+          }
+        }
+      });
+    }
+
+    renderGaugeChart("gaugeElectricity", 450.2, 600, "#FF4B4B");
+    renderGaugeChart("gaugeWater", 33, 40, "#57A5F6");
+    renderGaugeChart("gaugeGas", 412, 500, "#00FF99");
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Smart Energy Dashboard</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/navigation.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages/home.css">
+  <link rel="stylesheet" href="styles/pages/transactions.css">
+  <link rel="stylesheet" href="styles/charts.css">
+  <link rel="stylesheet" href="styles/invoice.css">
+
+  <!-- Chart.js + Plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+
+<body>
+  <div class="viewport-wrapper">
+    <div class="iphone-frame">
+
+      <div id="splash-screen">
+        <img src="img/ESMOS_Small_Logo.png" alt="ESMOS Logo" class="logo" />
+      </div>
+
+      <!-- iOS-style Top Bar -->
+      <div class="top-bar">
+        <div class="time">9:41</div>
+        <div class="status-icons">📶 📡 📴 🔋</div>
+      </div>
+
+      <!-- Main App Content (Pages loaded dynamically) -->
+      <div class="app"></div>
+
+      <!-- Bottom Navigation -->
+      <footer>
+        <div class="nav-item active" onclick="loadPage('home', this)">
+          <img id="icon-home" src="img/HomeIcon-Filled.png" alt="Home" />
+          <p>Home</p>
+        </div>
+        <div class="nav-item" onclick="loadPage('billing', this)">
+          <img id="icon-billing" src="img/BillingIcon.png" alt="Billing" />
+          <p>Billing</p>
+        </div>
+        <div class="nav-item" onclick="loadPage('usage', this)">
+          <img id="icon-electricity" src="img/ElectricityIcon.png" alt="Usage" />
+          <p>Usage</p>
+        </div>
+        <div class="nav-item" onclick="loadPage('setting', this)">
+          <img id="icon-setting" src="img/Setting.png" alt="Setting" />
+          <p>Setting</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const splash = document.getElementById('splash-screen');
+      setTimeout(() => {
+        splash.style.opacity = '0';
+        setTimeout(() => {
+          splash.remove();
+        }, 800); // Matches CSS transition duration
+      }, 2000); // Time logo is shown before fade out
+    });
+  </script>
+
+  <!-- Modular JS Files (Core Logic First, Then Main) -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/core/loader.js"></script>
+  <script src="js/core/charts.js"></script>
+  <script src="js/core/status.js"></script>
+  <script src="js/core/transaction.js"></script>
+  <script src="js/core/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

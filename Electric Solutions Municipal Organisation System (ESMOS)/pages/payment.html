@@ -1,0 +1,22 @@
+<main class="payment-page">
+  <h2>Pay Your Bill</h2>
+  <p>You're about to pay <strong>$123.00</strong> for your March 2025 bill.</p>
+
+  <button class="pay-now-button" onclick="confirmPayment()">Confirm Payment</button>
+  <button class="cancel-button" onclick="loadPage('billing')">Cancel</button>
+</main>
+
+<script>
+  function confirmPayment() {
+    alert("Payment successful!");
+    loadPage('billing');
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/core/loader.js"></script>
+<script src="js/core/charts.js"></script>
+<script src="js/core/status.js"></script>
+<script src="js/core/transaction.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/main.js"></script>

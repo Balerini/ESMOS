@@ -1,0 +1,51 @@
+<main>
+  <!-- Profile Header -->
+  <header>
+    <div class="profile-section">
+      <div>
+        <h2>Hi Charlie</h2>
+        <p>Monday 3 March, 2025</p>
+      </div>
+      <img class="avatar" src="img/profile.png" alt="Profile" onclick="loadPage('setting')" />
+    </div>
+  </header>
+
+  <!-- Building + Usage -->
+  <div class="building-container" onclick="loadPage('usage')">
+    <img src="img/building.png" alt="Building" class="building-img" />
+
+    <div class="label john-room">
+      <div class="line"></div>
+      <div class="text"><span class="red">120 kW</span><br>John's Room</div>
+    </div>
+
+    <div class="label solar">
+      <div class="line"></div>
+      <div class="text"><span class="green">-6.9 kW</span><br>Solar panels</div>
+    </div>
+
+    <div class="label living-room">
+      <div class="text"><span class="white">16.9 kW</span><br>Living Room</div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <div class="total-usage">
+    <h1>130kW</h1>
+    <p>Total usage in an hour</p>
+  </div>
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    loadPage('home');
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/core/loader.js"></script>
+<script src="js/core/charts.js"></script>
+<script src="js/core/status.js"></script>
+<script src="js/core/transaction.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/main.js"></script>

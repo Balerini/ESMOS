@@ -1,0 +1,58 @@
+<main class="setting-page" style="padding: 32px 20px;">
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <img src="img/profile.png" class="avatar avatar-settings" alt="Toggle Theme" onclick="toggleTheme()" />      <h3 style="color: white; font-size: 18px; font-weight: 600; margin-top: 12px;">Charlie Lim</h3>
+    </div>
+  
+    <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+      <div class="setting-button">
+        <span>👤</span>
+        <p>Edit Profile</p>
+        <span class="arrow">›</span>
+      </div>
+      <div class="setting-button">
+        <span>💳</span>
+        <p>Payment Method</p>
+        <span class="arrow">›</span>
+      </div>
+      <div class="setting-button">
+        <span>📄</span>
+        <p>Subscription Plan</p>
+        <span class="arrow">›</span>
+      </div>
+      <div class="setting-button">
+        <span>🌙</span>
+        <p>Display & Brightness</p>
+        <span class="arrow">›</span>
+      </div>
+      <div class="setting-button">
+        <span>ℹ️</span>
+        <p>Help Centre</p>
+        <span class="arrow">›</span>
+      </div>
+    </div>
+  
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("themeToggle");
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+      });
+  
+      // Restore saved theme on load
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+      }
+    });
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/core/loader.js"></script>
+<script src="js/core/charts.js"></script>
+<script src="js/core/status.js"></script>
+<script src="js/core/transaction.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/main.js"></script>

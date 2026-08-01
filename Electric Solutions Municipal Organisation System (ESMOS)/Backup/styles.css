@@ -1,0 +1,1642 @@
+/* === GLOBAL RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: black;
+  font-family: 'Poppins', sans-serif;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  touch-action: manipulation;
+}
+
+/* === CENTERED FIXED VIEWPORT === */
+.viewport-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+/* === IPHONE FRAME === */
+.iphone-frame {
+  width: 430px;
+  height: 932px;
+  background-color: #121212;
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.6);
+}
+
+/* === TOP BAR (SIMULATED IOS STATUS) === */
+.top-bar {
+  height: 80px;
+  background-color: #1F1F1F;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* === MAIN APP CONTENT === */
+.app {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 140px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* === HEADER / PROFILE === */
+header {
+  padding: 36px 24px 10px;
+}
+
+.profile-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.3px;
+}
+
+.profile-section p {
+  font-size: 14px;
+  color: rgba(184, 168, 255, 0.9);
+  margin-top: 2px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* === BUILDING SECTION === */
+.building-container {
+  position: relative;
+  width: 370px;
+  margin: 40px auto 0;
+}
+
+.building-img {
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.label .line {
+  width: 1.5px;
+  height: 36px;
+  background: white;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.label .text {
+  line-height: 1.2;
+}
+
+.john-room { top: -12px; left: 56px; }
+.solar { top: -12px; right: 52px; }
+.living-room { bottom: 50px; left: 134px; }
+
+.red { color: #FF4B4B; }
+.green { color: #00FF99; }
+.white { color: white; }
+
+/* === TOTAL USAGE === */
+.total-usage {
+  padding: 8px 28px 0;
+}
+
+.total-usage h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #F5F5F7;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.total-usage p {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0;
+  letter-spacing: -0.1px;
+}
+
+/* === REFRESH SPINNER === */
+.refresh-indicator {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 9;
+}
+
+.refresh-indicator.active {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* === FOOTER === */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1F1F1F;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 14px 0 28px;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 10;
+}
+
+footer::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 135px;
+  height: 5px;
+  background: white;
+  border-radius: 100px;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* === NAV ITEMS === */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #888;
+  font-size: 14px;
+  gap: 5px;
+  width: 64px;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-item img {
+  width: 30px;
+  height: 30px;
+  transition: 0.3s ease;
+}
+
+.nav-item.active {
+  color: white;
+}
+
+.nav-item.active img {
+  transform: scale(1.1);
+}
+
+.nav-item.active::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.95;
+}
+
+/* === CARD SECTION === */
+.card-section {
+  padding: 20px 20px 0;
+}
+
+.section-title {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.billing-card {
+  background: #1F1F1F;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.service-info {
+  flex: 1.2;
+  color: white;
+  font-size: 13px;
+}
+
+.service-info span {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+
+.usage-bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.bar {
+  width: 6px;
+  height: 20px;
+  border-radius: 3px;
+  background: #555;
+}
+
+.bar.red { background: #FF4B4B; }
+.bar.green { background: #00FF99; }
+
+.price {
+  flex: 0.6;
+  text-align: right;
+  font-weight: 600;
+  color: white;
+  font-size: 14px;
+}
+
+/* === TRANSACTIONS === */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-all {
+  background: #333a5e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.transactions-wrapper {
+  position: relative;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.txn-title {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.txn-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.txn-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00FF99;
+  margin-bottom: 12px;
+}
+
+.txn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+/* === STATUS BADGES === */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.paid {
+  background-color: #00C37A;
+  color: white;
+}
+
+.status-badge.pending {
+  background-color: #F5C042;
+  color: #1a1a1a;
+}
+
+.status-badge.overdue {
+  background-color: #FF4B4B;
+  color: white;
+}
+
+.extra-transactions.hidden {
+  display: none;
+}
+
+/* === SETTINGS === */
+.setting-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2A2E48;
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: white;
+  font-size: 14px;
+  gap: 12px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  transition: background 0.2s ease;
+}
+
+.setting-button span:first-child {
+  font-size: 18px;
+  width: 24px;
+}
+
+.setting-button .arrow {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* === FADE EFFECT ABOVE FOOTER === */
+.fade-footer {
+  position: relative;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.fade-footer::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, #121212 80%, rgba(18,18,18,0));
+  pointer-events: none;
+}
+
+.transaction-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: black;
+  gap: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.transaction-card:hover {
+  background: #f5f5f5;
+}
+
+.txn-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.txn-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.txn-price {
+  font-weight: 600;
+  color: black;
+}
+
+.show-more-btn {
+  background: #2a2e48;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* === TRANSACTION DETAILS PAGE === */
+.transaction-details {
+  padding: 24px 20px 40px;
+}
+
+.transaction-summary .usage-summary {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: space-between;
+}
+
+.usage-box {
+  flex: 1;
+  border-radius: 16px;
+  padding: 16px 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.usage-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.usage-value {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.usage-value span {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.usage-trend {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.usage-trend.red {
+  color: #ff4b4b;
+}
+
+.usage-trend.green {
+  color: #00ff99;
+}
+
+.view-link {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 14px;
+  text-decoration: underline;
+  color: white;
+  opacity: 0.9;
+}
+
+.current-bill h2 {
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.status-tag {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 100px;
+  font-weight: 600;
+  color: black;
+  white-space: nowrap;
+}
+
+.status-tag.paid {
+  background: #2be29d;
+}
+
+.status-tag.pending {
+  background: #ffd966;
+}
+
+.status-tag.overdue {
+  background: #ff4b4b;
+  color: white;
+}
+
+.breakdown-button {
+  font-size: 12px;
+  background: none;
+  border: 2px solid #ccc;
+  border-radius: 14px;
+  padding: 12px 14px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 130px;
+}
+
+.gauge-box {
+  background: #1d1d1d;
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+}
+
+.gauge-title {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.usage-pod-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.usage-pod {
+  flex: 1;
+  background: #1e1e1e;
+  border-radius: 20px;
+  padding: 14px 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.usage-pod canvas {
+  width: 80%;
+  margin: 0 auto 8px;
+}
+
+.pod-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pod-label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.pod-change {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pod-red { background: #2e4038; }
+.pod-blue { background: #1f2a45; }
+.pod-purple { background: #3a1a48; }
+
+.pod-change.red { color: #ff4b4b; }
+.pod-change.green { color: #00ff99; }
+
+.transaction-summary-card {
+  background: #1f1f1f;
+  margin: 24px 20px;
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  font-size: 14px;
+}
+
+.status-pill {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.status-pill.paid {
+  background-color: #39d98a;
+  color: #000;
+}
+
+.gauges-section {
+  background: #1f1f1f;
+  margin: 0 20px 32px;
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+}
+
+.breakdown-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.breakdown-link button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back-button {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.back-button:active {
+  color: #999;
+}
+
+.summary-chart {
+  margin: 0 20px 20px;
+  padding: 0 20px;
+}
+
+.gauges-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.gauge-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.gauge-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.gauge-diff {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.gauge-diff.red {
+  color: #FF4B4B;
+}
+
+.gauge-diff.green {
+  color: #00FF99;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bill-status {
+  background: #4cff92;
+  color: #111;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.bill-description {
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.doughnut-gauges {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 16px;
+}
+
+.gauge-column {
+  text-align: center;
+  color: white;
+}
+
+.gauge-usage {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.gauge-ref {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.inline-gauges {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 0 10px;
+  gap: 12px;
+  text-align: center;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.delta {
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.delta.red {
+  color: #FF4B4B;
+}
+
+.delta.green {
+  color: #00FF99;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bill-amount {
+  font-size: 28px;
+  color: #4EFF9A;
+  margin: 10px 0;
+}
+
+.bill-status {
+  background: #4EFF9A;
+  color: black;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.gauge-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 10px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gauge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 100px;
+}
+
+.gauge-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
+}
+
+.gauge-label small {
+  display: block;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+.gauge-delta {
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.gauge-delta.red {
+  color: #FF4B4B;
+}
+
+.gauge-delta.green {
+  color: #00FF99;
+}
+
+.transaction-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.summary-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.gauge-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.gauge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 110px;
+  color: white;
+}
+
+.subtext {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.delta {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.delta.red {
+  color: #FF4B4B;
+}
+
+.delta.green {
+  color: #00FF99;
+}
+
+.bill-summary {
+  background: #1F1F1F;
+  margin: 20px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+.bill-amount-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bill-status.paid {
+  background-color: #3ae87c;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.invoice-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #121212;
+  z-index: 999;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.print-button {
+  background: white;
+  color: black;
+  padding: 8px 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.invoice-content h2 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.invoice-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.gauge-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Fix status badge sizing */
+.bill-summary-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.bill-status {
+  background-color: #00FF99;
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Divider under status */
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #555;
+  border: none;
+  margin: 0;
+}
+
+/* === Strike-through for Paid Amount === */
+.strike,
+.bill-amount.strike {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* === Pay Button === */
+.pay-button {
+  background-color: #00FF99;
+  color: black;
+  padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pay-button:hover:not(:disabled) {
+  background-color: #00e68a;
+}
+
+.pay-button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.pay-button:disabled,
+.pay-button.paid-button {
+  background-color: #aaa;
+  color: #444;
+  cursor: not-allowed;
+}
+
+/* === Bill Status Badge === */
+.bill-status {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Override paid styling */
+.bill-amount.strike {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.pay-button.paid-button {
+  background-color: #aaa;
+  color: #444;
+  cursor: not-allowed;
+}
+
+.bill-status.paid {
+  background-color: #00FF99;
+  color: #000;
+}
+
+.bill-status.pending {
+  background-color: #FFD966;
+  color: #000;
+}
+
+.bill-status.overdue {
+  background-color: #FF4B4B;
+  color: #fff;
+}
+
+/* === Divider Line === */
+.divider-line {
+  border: none;
+  border-top: 1px solid #888;
+  opacity: 0.4;
+  margin: 8px 0 16px;
+}
+
+.gauge-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.gauge-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+  z-index: 1;
+}
+
+.gauge-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  pointer-events: none;
+}
+
+.gauge-label small {
+  display: block;
+  font-size: 11px;
+  color: #bbb;
+  font-weight: 400;
+  margin: 2px 0;
+}
+
+.gauge-diff {
+  font-weight: bold;
+  font-size: 13px;
+  display: block;
+  margin-top: 4px;
+}
+
+.gauge-diff.red {
+  color: #FF4B4B;
+}
+
+.gauge-diff.green {
+  color: #00FF99;
+}
+
+.usage-breakdown {
+  margin: 20px;
+  padding: 10px 10px 0;
+}
+
+/* === USAGE BREAKDOWN CHART === */
+.usage-breakdown {
+  margin: 0 20px 8px;
+  padding-top: 10px;
+}
+
+.usage-breakdown canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* === USAGE BREAKDOWN CHART === */
+.usage-breakdown {
+  margin: 0 20px 8px;
+  padding-top: 10px;
+}
+
+.usage-breakdown canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* === USAGE BREAKDOWN INFO BELOW CHART === */
+.usage-breakdown-info {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 24px 24px;
+  gap: 8px;
+}
+
+.usage-breakdown-column {
+  flex: 1;
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.usage-breakdown-column small {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.usage-breakdown-column .delta {
+  font-size: 13px;
+  font-weight: bold;
+  display: block;
+  margin: 6px 0 2px;
+}
+
+.usage-breakdown-column .delta.red {
+  color: #FF4B4B;
+}
+
+.usage-breakdown-column .delta.green {
+  color: #00FF99;
+}
+
+.label-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.breakdown-chart {
+  margin: 20px;
+}
+
+.usage-breakdown-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 20px 30px;
+  text-align: center;
+  color: white;
+}
+
+.breakdown-card {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.breakdown-card .amount {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.breakdown-card .ref {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.breakdown-card .delta {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.breakdown-card .label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.usage-breakdown-info {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: white;
+  margin: 24px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+}
+
+.breakdown-card {
+  flex: 1;
+  min-width: 100px;
+}
+
+.usage-breakdown {
+  padding: 20px 20px 0;
+  position: relative;
+  z-index: 0;
+}
+
+.gauge-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.gauge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 110px;
+  position: relative;
+  z-index: 0;
+}
+
+.label-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+.usage-gauges {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 24px 16px 32px;
+  flex-wrap: nowrap;
+}
+
+.gauge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.gauge-wrapper {
+  width: 100px;
+  height: 60px; /* Half size for half doughnut */
+  position: relative;
+  overflow: visible;
+  margin-bottom: 8px;
+}
+
+.gauge-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  z-index: 2;
+}
+
+.gauge-label {
+  font-size: 13px;
+  color: white;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.gauge-label small {
+  display: block;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+.gauge-diff {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.gauge-diff.red {
+  color: #FF4B4B;
+}
+
+.gauge-diff.green {
+  color: #00FF99;
+}
+
+.gauge-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  margin-top: 6px;
+}
+
+.gauge-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 24px 0 16px;
+  padding: 0 16px;
+  gap: 16px;
+}
+
+.gauge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  text-align: center;
+}
+
+.gauge-wrapper {
+  width: 100px;
+  height: 60px;
+  position: relative;
+}
+
+.gauge-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.gauge-amount {
+  margin-top: 4px;
+  font-size: 13px;
+  color: white;
+}
+
+.gauge-amount strong {
+  font-size: 14px;
+  color: white;
+}
+
+.gauge-amount small {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.gauge-delta {
+  margin: 6px 0;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.gauge-delta.red {
+  color: #FF4B4B;
+}
+
+.gauge-delta.green {
+  color: #00FF99;
+}
+
+.gauge-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 2px;
+  color: white;
+}
+
+.extra-transactions.hidden {
+  display: none;
+}
+
+.summary-chart {
+  margin-bottom: 0;
+}
+
+.gauge-row {
+  margin-top: -12px;
+}
+
+.gauge-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pay-button {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.gauge-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 24px 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gauge-card {
+  text-align: center;
+  width: 110px;
+}
+
+.gauge-canvas {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.gauge-usage {
+  font-size: 14px;
+  color: white;
+}
+
+.gauge-ref {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.gauge-delta {
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.gauge-delta.red {
+  color: #FF4B4B;
+}
+
+.gauge-delta.green {
+  color: #00FF99;
+}
+
+.gauge-title {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Strike-through when paid */
+.strike {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.pay-button {
+  background-color: #00FF99;
+  color: black;
+  padding: 10px 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pay-button:hover:not(:disabled) {
+  background-color: #00e68a;
+}
+
+.pay-button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.pay-button:disabled,
+.pay-button.paid-button {
+  background-color: #aaa;
+  color: #444;
+  cursor: not-allowed;
+}
+
+.bill-status {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.bill-status.paid {
+  background-color: #00FF99;
+  color: #000;
+}
+
+.bill-status.pending {
+  background-color: #FFD966;
+  color: #000;
+}
+
+.bill-status.overdue {
+  background-color: #FF4B4B;
+  color: white;
+}
+
+.divider-line {
+  border: none;
+  border-top: 1px solid #888;
+  opacity: 0.4;
+  margin: 8px 0 16px;
+}
+
+.text-red {
+  color: #ff5e5e !important;
+}
+.text-orange {
+  color: #ffa500 !important;
+}
+.text-grey {
+  color: #888 !important;
+}
+.green-button {
+  background-color: #00ff99 !important;
+  color: black !important;
+}
+.paid-button {
+  background-color: #444 !important;
+  color: #ccc !important;
+}
+
+.bill-amount-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.center-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.center-header .back-button {
+  position: absolute;
+  left: 0;
+}

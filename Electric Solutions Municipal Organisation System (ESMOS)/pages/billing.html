@@ -1,0 +1,157 @@
+<main class="billing-page">
+
+  <!-- Compact Current Bill -->
+  <div class="billing-card compact-card" style="margin: 24px 20px 16px;">
+    <h3 class="section-title" style="margin-bottom: 10px;">Current Bill</h3>
+    <div class="bill-amount-row" style="justify-content: space-between; align-items: center;">
+      <h2 class="bill-amount strike">$123.00</h2>
+      <span class="bill-status paid">Paid</span>
+    </div>
+    <p class="bill-description">Your total bill this month was slightly lower than February.</p>
+  </div>
+  
+  <!-- Breakdown Chart -->
+  <div class="area-chart-card" style="margin: 0 20px 24px;">
+    <h3 class="section-title">Breakdown per Area (S$)</h3>
+    <canvas id="areaChart" height="200"></canvas>
+  </div>
+
+  <!-- Next month's predicted energy cost chart -->
+
+  <div class="area-chart-card" style="margin: 0 20px 24px;">
+    <h3 class="section-title">Estimated Next Month</h3>
+    <canvas id="predictiveChart" height="200"></canvas>
+  </div>
+
+
+  <!-- Recent Transactions -->
+  <div class="transactions-card" style="margin: 0 20px 32px;">
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <h3 class="section-title">Recent Transactions</h3>
+      <button class="view-all show-more-btn" onclick="toggleTransactions()">Show All</button>
+    </div>
+  
+    <div class="transactions-list">
+      <!-- Sorted by Month -->
+      <div class="transaction-card" onclick="loadPage('transaction-march')">
+        <div class="txn-icon" style="background: #00FF99; width: 16px; height: 16px; border-radius: 50%;"></div>
+        <div class="txn-info">
+          <strong>March 2025 Usage</strong>
+          <span>18 Mar 2025 12:00 PM</span>
+        </div>
+        <div class="txn-price">$123.00</div>
+      </div>
+  
+      <div class="transaction-card" onclick="loadPage('transaction-february')">
+        <div class="txn-icon" style="background: #FFD966; width: 16px; height: 16px; border-radius: 50%;"></div>
+        <div class="txn-info">
+          <strong>February 2025 Usage</strong>
+          <span>15 Feb 2025 11:22 AM</span>
+        </div>
+        <div class="txn-price">$137.40</div>
+      </div>
+  
+      <div class="transaction-card" onclick="loadPage('transaction-january')">
+        <div class="txn-icon" style="background: #FF4B4B; width: 16px; height: 16px; border-radius: 50%;"></div>
+        <div class="txn-info">
+          <strong>January 2025 Usage</strong>
+          <span>17 Jan 2025 8:50 AM</span>
+        </div>
+        <div class="txn-price">$110.00</div>
+      </div>
+  
+      <div class="transaction-card" onclick="loadPage('transaction-december')">
+        <div class="txn-icon" style="background: #FFD966; width: 16px; height: 16px; border-radius: 50%;"></div>
+        <div class="txn-info">
+          <strong>December 2024 Usage</strong>
+          <span>20 Dec 2024 11:00 AM</span>
+        </div>
+        <div class="txn-price">$124.60</div>
+      </div>
+  
+      <!-- Hidden by default -->
+      <div class="extra-transactions" style="display: none; flex-direction: column; gap: 16px; margin-top: 16px;">
+        <div class="transaction-card" onclick="loadPage('transaction-november')">
+          <div class="txn-icon" style="background: #FF4B4B; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>November 2024 Usage</strong>
+            <span>18 Nov 2024 4:40 PM</span>
+          </div>
+          <div class="txn-price">$129.80</div>
+        </div>
+  
+        <div class="transaction-card" onclick="loadPage('transaction-october')">
+          <div class="txn-icon" style="background: #00FF99; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>October 2024 Usage</strong>
+            <span>19 Oct 2024 3:00 PM</span>
+          </div>
+          <div class="txn-price">$115.00</div>
+        </div>
+  
+        <div class="transaction-card" onclick="loadPage('transaction-september')">
+          <div class="txn-icon" style="background: #FFD966; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>September 2024 Usage</strong>
+            <span>17 Sep 2024 2:25 PM</span>
+          </div>
+          <div class="txn-price">$105.00</div>
+        </div>
+
+        <div class="transaction-card" onclick="loadPage('transaction-august')">
+          <div class="txn-icon" style="background: #FF4B4B; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>August 2024 Usage</strong>
+            <span>18 Aug 2024 3:15 PM</span>
+          </div>
+          <div class="txn-price">$122.80</div>
+        </div>
+        
+        <div class="transaction-card" onclick="loadPage('transaction-july')">
+          <div class="txn-icon" style="background: #00FF99; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>July 2024 Usage</strong>
+            <span>19 Jul 2024 1:45 PM</span>
+          </div>
+          <div class="txn-price">$110.20</div>
+        </div>
+        
+        <div class="transaction-card" onclick="loadPage('transaction-june')">
+          <div class="txn-icon" style="background: #FFD966; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>June 2024 Usage</strong>
+            <span>21 Jun 2024 10:40 AM</span>
+          </div>
+          <div class="txn-price">$108.00</div>
+        </div>
+        
+        <div class="transaction-card" onclick="loadPage('transaction-may')">
+          <div class="txn-icon" style="background: #00FF99; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>May 2024 Usage</strong>
+            <span>17 May 2024 9:30 AM</span>
+          </div>
+          <div class="txn-price">$127.00</div>
+        </div>
+        
+        <div class="transaction-card" onclick="loadPage('transaction-april')">
+          <div class="txn-icon" style="background: #FF4B4B; width: 16px; height: 16px; border-radius: 50%;"></div>
+          <div class="txn-info">
+            <strong>April 2024 Usage</strong>
+            <span>16 Apr 2024 2:15 PM</span>
+          </div>
+          <div class="txn-price">$134.50</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/core/loader.js"></script>
+<script src="js/core/charts.js"></script>
+<script src="js/core/status.js"></script>
+<script src="js/core/transaction.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/main.js"></script>

@@ -1,0 +1,190 @@
+Date,Month,User ID,Room Name,Room Type,Usage
+2024,4,1,Living Room,Living,38.2
+2024,4,1,John's Room,Bedroom,19
+2024,4,1,Master Room,Bedroom,42.5
+2024,4,1,Rented Room,Bedroom(Rented),21.8
+2024,4,1,Kitchen,Kitchen,13
+2024,5,1,Living Room,Living,36.8
+2024,5,1,John's Room,Bedroom,17.2
+2024,5,1,Master Room,Bedroom,40
+2024,5,1,Rented Room,Bedroom(Rented),20.5
+2024,5,1,Kitchen,Kitchen,12.5
+2024,6,1,Living Room,Living,31
+2024,6,1,John's Room,Bedroom,14
+2024,6,1,Master Room,Bedroom,35
+2024,6,1,Rented Room,Bedroom(Rented),18
+2024,6,1,Kitchen,Kitchen,10
+2024,7,1,Living Room,Living,31.2
+2024,7,1,John's Room,Bedroom,15.2
+2024,7,1,Master Room,Bedroom,36
+2024,7,1,Rented Room,Bedroom(Rented),18.6
+2024,7,1,Kitchen,Kitchen,9.2
+2024,8,1,Living Room,Living,33.6
+2024,8,1,John's Room,Bedroom,14.5
+2024,8,1,Master Room,Bedroom,38
+2024,8,1,Rented Room,Bedroom(Rented),22
+2024,8,1,Kitchen,Kitchen,14.7
+2024,9,1,Living Room,Living,30.2
+2024,9,1,John's Room,Bedroom,13.8
+2024,9,1,Master Room,Bedroom,32
+2024,9,1,Rented Room,Bedroom(Rented),18
+2024,9,1,Kitchen,Kitchen,11
+2024,10,1,Living Room,Living,33
+2024,10,1,John's Room,Bedroom,14
+2024,10,1,Master Room,Bedroom,36
+2024,10,1,Rented Room,Bedroom(Rented),20
+2024,10,1,Kitchen,Kitchen,12
+2024,11,1,Living Room,Living,36.8
+2024,11,1,John's Room,Bedroom,16
+2024,11,1,Master Room,Bedroom,39
+2024,11,1,Rented Room,Bedroom(Rented),22
+2024,11,1,Kitchen,Kitchen,16
+2024,12,1,Living Room,Living,35
+2024,12,1,John's Room,Bedroom,15
+2024,12,1,Master Room,Bedroom,40
+2024,12,1,Rented Room,Bedroom(Rented),22.6
+2024,12,1,Kitchen,Kitchen,12
+2024,1,1,Living Room,Living,32
+2024,1,1,John's Room,Bedroom,14
+2024,1,1,Master Room,Bedroom,36
+2024,1,1,Rented Room,Bedroom(Rented),18
+2024,1,1,Kitchen,Kitchen,10
+2024,2,1,Living Room,Living,40
+2024,2,1,John's Room,Bedroom,18
+2024,2,1,Master Room,Bedroom,42
+2024,2,1,Rented Room,Bedroom(Rented),23
+2024,2,1,Kitchen,Kitchen,14.4
+2024,3,1,Living Room,Living,41
+2024,3,1,John's Room,Bedroom,17
+2024,3,1,Master Room,Bedroom,46
+2024,3,1,Rented Room,Bedroom(Rented),27
+2024,3,1,Kitchen,Kitchen,20
+2024,4,2,Living Room,Living,21.9
+2024,4,2,Shaun's Room,Bedroom,43.2
+2024,4,2,Master Room,Bedroom,35.1
+2024,4,2,Rented Room,Bedroom(Rented),30.2
+2024,4,2,Kitchen,Kitchen,13.8
+2024,7,2,Living Room,Living,13.8
+2024,7,2,Shaun's Room,Bedroom,10.1
+2024,7,2,Master Room,Bedroom,40
+2024,7,2,Rented Room,Bedroom(Rented),30.2
+2024,7,2,Kitchen,Kitchen,34.2
+2024,5,2,Living Room,Living,8.8
+2024,5,2,Shaun's Room,Bedroom,43.9
+2024,5,2,Master Room,Bedroom,38.8
+2024,5,2,Rented Room,Bedroom(Rented),15.9
+2024,5,2,Kitchen,Kitchen,14.7
+2024,6,2,Living Room,Living,14.8
+2024,6,2,Shaun's Room,Bedroom,19.3
+2024,6,2,Master Room,Bedroom,27.4
+2024,6,2,Rented Room,Bedroom(Rented),24
+2024,6,2,Kitchen,Kitchen,18.8
+2024,5,3,Living Room,Living,30.6
+2024,5,3,Justin's Room,Bedroom,13.2
+2024,5,3,Master Room,Bedroom,18.8
+2024,5,3,Rented Room,Bedroom(Rented),21.6
+2024,5,3,Kitchen,Kitchen,24.9
+2024,6,3,Living Room,Living,37.1
+2024,6,3,Justin's Room,Bedroom,15.4
+2024,6,3,Master Room,Bedroom,27
+2024,6,3,Rented Room,Bedroom(Rented),29.9
+2024,6,3,Kitchen,Kitchen,9.7
+2024,4,4,Living Room,Living,30.5
+2024,4,4,John's Room,Bedroom,14.3
+2024,4,4,Master Room,Bedroom,10.4
+2024,4,4,Rented Room,Bedroom(Rented),43.1
+2024,4,4,Kitchen,Kitchen,43.7
+2024,6,4,Living Room,Living,37.9
+2024,6,4,John's Room,Bedroom,19.3
+2024,6,4,Master Room,Bedroom,11.6
+2024,6,4,Rented Room,Bedroom(Rented),33.3
+2024,6,4,Kitchen,Kitchen,24.3
+2024,4,5,Living Room,Living,12.5
+2024,4,5,Martin's Room,Bedroom,26.3
+2024,4,5,Master Room,Bedroom,9.3
+2024,4,5,Rented Room,Bedroom(Rented),41.6
+2024,4,5,Kitchen,Kitchen,17.6
+2024,7,5,Living Room,Living,32.5
+2024,7,5,Martin's Room,Bedroom,19.5
+2024,7,5,Master Room,Bedroom,27.2
+2024,7,5,Rented Room,Bedroom(Rented),28.2
+2024,7,5,Kitchen,Kitchen,14.8
+2024,6,5,Living Room,Living,43.9
+2024,6,5,Martin's Room,Bedroom,36.7
+2024,6,5,Master Room,Bedroom,42.8
+2024,6,5,Rented Room,Bedroom(Rented),41.1
+2024,6,5,Kitchen,Kitchen,30.1
+2024,5,6,Living Room,Living,42.1
+2024,5,6,Shirley's Room,Bedroom,11.3
+2024,5,6,Master Room,Bedroom,15.3
+2024,5,6,Rented Room,Bedroom(Rented),9.7
+2024,5,6,Kitchen,Kitchen,20
+2024,6,6,Living Room,Living,22.4
+2024,6,6,Shirley's Room,Bedroom,18
+2024,6,6,Master Room,Bedroom,38.7
+2024,6,6,Rented Room,Bedroom(Rented),21.2
+2024,6,6,Kitchen,Kitchen,18.4
+2024,4,7,Living Room,Living,28.1
+2024,4,7,Morgan's Room,Bedroom,13.2
+2024,4,7,Master Room,Bedroom,37.7
+2024,4,7,Kitchen,Kitchen,10.8
+2024,6,7,Living Room,Living,44.5
+2024,6,7,Riley's Room,Bedroom,36.6
+2024,6,7,Master Room,Bedroom,15.4
+2024,6,7,Rented Room,Bedroom(Rented),8.2
+2024,6,7,Kitchen,Kitchen,38.2
+2024,7,7,Living Room,Living,34.2
+2024,7,7,Alex's Room,Bedroom,35
+2024,7,7,Master Room,Bedroom,36.5
+2024,7,7,Rented Room,Bedroom(Rented),10.7
+2024,7,7,Kitchen,Kitchen,21.3
+2024,5,7,Living Room,Living,12.3
+2024,5,7,Taylor's Room,Bedroom,39.9
+2024,5,7,Master Room,Bedroom,31.1
+2024,5,7,Rented Room,Bedroom(Rented),20.2
+2024,5,7,Kitchen,Kitchen,10.4
+2024,6,8,Living Room,Living,19.5
+2024,6,8,Sam's Room,Bedroom,20
+2024,6,8,Master Room,Bedroom,35
+2024,6,8,Kitchen,Kitchen,31.6
+2024,4,8,Living Room,Living,40.8
+2024,4,8,Jamie's Room,Bedroom,25.5
+2024,4,8,Master Room,Bedroom,12.4
+2024,4,8,Kitchen,Kitchen,34.4
+2024,7,8,Living Room,Living,36.1
+2024,7,8,Sam's Room,Bedroom,28.8
+2024,7,8,Master Room,Bedroom,36.5
+2024,7,8,Rented Room,Bedroom(Rented),26.3
+2024,7,8,Kitchen,Kitchen,27.3
+2024,7,9,Living Room,Living,23.8
+2024,7,9,Jordan's Room,Bedroom,8.9
+2024,7,9,Master Room,Bedroom,12
+2024,7,9,Rented Room,Bedroom(Rented),9.2
+2024,7,9,Kitchen,Kitchen,31.5
+2024,6,9,Living Room,Living,19.6
+2024,6,9,Jamie's Room,Bedroom,26.8
+2024,6,9,Master Room,Bedroom,41.6
+2024,6,9,Kitchen,Kitchen,17.2
+2024,6,10,Living Room,Living,23.2
+2024,6,10,Jordan's Room,Bedroom,36
+2024,6,10,Master Room,Bedroom,16.5
+2024,6,10,Kitchen,Kitchen,10.8
+2024,7,10,Living Room,Living,18.7
+2024,7,10,Morgan's Room,Bedroom,14
+2024,7,10,Master Room,Bedroom,42.4
+2024,7,10,Rented Room,Bedroom(Rented),37.9
+2024,7,10,Kitchen,Kitchen,31.4
+2024,4,10,Living Room,Living,40.2
+2024,4,10,Jordan's Room,Bedroom,37.7
+2024,4,10,Master Room,Bedroom,14.9
+2024,4,10,Rented Room,Bedroom(Rented),41
+2024,4,10,Kitchen,Kitchen,28
+2024,7,11,Living Room,Living,37.9
+2024,7,11,Casey's Room,Bedroom,41.2
+2024,7,11,Master Room,Bedroom,19.8
+2024,7,11,Rented Room,Bedroom(Rented),12.1
+2024,7,11,Kitchen,Kitchen,16.4
+2024,5,11,Living Room,Living,23.8
+2024,5,11,Sam's Room,Bedroom,38.3
+2024,5,11,Master Room,Bedroom,39.8
+2024,5,11,Kitchen,Kitchen,8.3

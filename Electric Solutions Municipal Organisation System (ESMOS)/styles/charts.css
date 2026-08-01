@@ -1,0 +1,326 @@
+/* === CHARTS === */
+.gauge-box {
+  background: #1d1d1d;
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+}
+
+.gauge-title {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.gauges-section {
+  background: #1f1f1f;
+  margin: 0 20px 32px;
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+}
+
+.summary-chart {
+  margin: 0 20px 20px;
+  padding: 0 20px;
+}
+
+.gauges-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.gauge-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gauge-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.gauge-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gauge-label small {
+  display: block;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+.gauge-diff,
+.gauge-delta {
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+.gauge-diff.red,
+.gauge-delta.red {
+  color: #FF4B4B;
+}
+
+.gauge-diff.green,
+.gauge-delta.green {
+  color: #00FF99;
+}
+
+.gauge-column {
+  text-align: center;
+  color: white;
+}
+
+.gauge-usage,
+.gauge-amount {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.gauge-amount strong {
+  font-size: 14px;
+  color: white;
+}
+
+.gauge-amount small {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.gauge-ref {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.gauge-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 24px 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gauge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 110px;
+  position: relative;
+  z-index: 0;
+}
+
+.gauge-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  margin-top: 6px;
+}
+
+.usage-gauges {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 24px 16px 32px;
+  flex-wrap: nowrap;
+}
+
+.gauge-canvas {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+/* === USAGE BREAKDOWN CHART === */
+.usage-breakdown {
+  margin: 0 20px 8px;
+  padding-top: 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.usage-breakdown canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.breakdown-chart {
+  margin: 20px;
+}
+
+/* === USAGE BREAKDOWN INFO BELOW CHART === */
+.usage-breakdown-info {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: white;
+  margin: 24px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+}
+
+.usage-breakdown-column,
+.breakdown-card {
+  flex: 1;
+  min-width: 100px;
+  padding: 0 10px;
+}
+
+.usage-breakdown-column {
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.usage-breakdown-column small {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.usage-breakdown-column .delta,
+.breakdown-card .delta {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.usage-breakdown-column .delta.red,
+.breakdown-card .delta.red {
+  color: #FF4B4B;
+}
+
+.usage-breakdown-column .delta.green,
+.breakdown-card .delta.green {
+  color: #00FF99;
+}
+
+.breakdown-card .amount {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.breakdown-card .ref {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.label-title,
+.breakdown-card .label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.usage-pod-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.usage-pod {
+  flex: 1;
+  background: #1e1e1e;
+  border-radius: 20px;
+  padding: 14px 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.usage-pod canvas {
+  width: 80%;
+  margin: 0 auto 8px;
+}
+
+.pod-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pod-label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.pod-change {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pod-red { background: #2e4038; }
+.pod-blue { background: #1f2a45; }
+.pod-purple { background: #3a1a48; }
+.pod-change.red { color: #ff4b4b; }
+.pod-change.green { color: #00ff99; }
+
+.doughnut-gauges {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 16px;
+}
+
+.inline-gauges {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 0 10px;
+  gap: 12px;
+  text-align: center;
+}
+
+.gauge-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.gauge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 110px;
+  color: white;
+}

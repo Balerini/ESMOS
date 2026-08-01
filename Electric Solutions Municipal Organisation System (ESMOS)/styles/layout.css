@@ -1,0 +1,71 @@
+/* === CENTERED FIXED VIEWPORT === */
+.viewport-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+/* === IPHONE FRAME === */
+.iphone-frame {
+  width: 430px;
+  height: 932px;
+  background-color: #121212;
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.6);
+}
+
+/* === TOP BAR (SIMULATED IOS STATUS) === */
+.top-bar {
+  height: 80px;
+  background-color: #1F1F1F;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* === MAIN APP CONTENT === */
+.app {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 140px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#splash-screen {
+  position: absolute;
+  inset: 0;
+  background: black;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+#splash-screen .logo {
+  width: 160px;
+  opacity: 0;
+  animation: logoFadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes logoFadeIn {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
